@@ -7,11 +7,9 @@ import { Box, Button, Avatar, Textarea} from '@mui/joy';
 
 
 export default function TextareaValidator() {
-  
-  
-  
+  const [commentTxt, setCommentTxt] = useState("");
 
-  const {IMG} = useContext(CommentContext);
+  const {IMG, addComment} = useContext(CommentContext);
   return (
     <div style={{display:'flex', 
     justifyContent:'center'}}>
@@ -35,6 +33,9 @@ export default function TextareaValidator() {
       <Textarea
         placeholder="Add a comment..."
         minRows={3}
+        onChange={(e) => {
+          setCommentTxt(e.target.value);
+        }}
         endDecorator={
           <Box
             sx={{
@@ -49,17 +50,21 @@ export default function TextareaValidator() {
             
           </Box>
         }
-        
         sx={{
           minWidth: 400,
-          
-          
         }}
       />
       </Grid>
       <Grid xs='auto'>
      
-      <Button sx={{
+      <Button 
+      onClick={(e) => {
+        !commentTxt.trim()
+          ? e.preventDefault()
+          : addComment(commentTxt.trim());
+        setCommentTxt("");
+      }}
+      sx={{
         backgroundColor:'hsl(238, 40%, 52%)', 
         width:'110px', 
         height:'50px',
