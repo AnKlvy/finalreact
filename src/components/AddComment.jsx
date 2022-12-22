@@ -1,4 +1,4 @@
-import * as React from 'react';
+import {useState, useContext} from 'react';
 import {CommentContext} from './../commentContext'
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -7,11 +7,11 @@ import { Box, Button, Avatar, Textarea} from '@mui/joy';
 
 
 export default function TextareaValidator() {
-  const [italic, setItalic] = React.useState(false);
-  const [fontWeight, setFontWeight] = React.useState('normal');
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  
+  
+  
 
-  const {IMG} = React.useContext(CommentContext);
+  const {IMG} = useContext(CommentContext);
   return (
     <div style={{display:'flex', 
     justifyContent:'center'}}>
@@ -24,14 +24,14 @@ export default function TextareaValidator() {
         bottom:'80px',
         width:'60%'
         }}>   
-        <Grid xs={1}>
+        <Grid xs zeroMinWidth>
         <Avatar
               src={IMG.juliusomo}
               variant="rounded"
               alt="user-avatar"
             />
         </Grid>
-      <Grid xs={9}>
+      <Grid xs={9} sx={{justifyContent:'left'}}>
       <Textarea
         placeholder="Add a comment..."
         minRows={3}
@@ -52,8 +52,8 @@ export default function TextareaValidator() {
         
         sx={{
           minWidth: 400,
-          fontWeight,
-          // fontStyle: italic ? 'italic' : 'initial',
+          
+          
         }}
       />
       </Grid>

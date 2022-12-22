@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container';
-import { useState } from 'react'
-import { CommentProvider } from './commentContext';
+import { useState, useContext } from 'react'
+import { CommentContext, CommentProvider } from './commentContext';
 import TextareaValidator from './components/AddComment'
 import { Comment } from './components/Comment';
 
@@ -8,6 +8,7 @@ import { Comment } from './components/Comment';
 
 
 function App() {
+  const { commentSection } = useContext(CommentContext);
   
   return (
     <div style={{
@@ -15,11 +16,15 @@ function App() {
       minHeight: '100vh', 
       minWidth: '800px',
       }}>
-       <Comment />
-      <CommentProvider>
        
+      
+       
+      {commentSection.map((comment) => {
+          return <Comment key={comment.id} data={comment} />;
+        })}
+      
     <TextareaValidator/>
-    </CommentProvider>
+    
     <div style={{height:'200px'}}></div>
     </div>
   )
