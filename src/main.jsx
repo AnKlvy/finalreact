@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import * as React from 'react';
+import ReactDOM from 'react-dom/client';
+import { StyledEngineProvider, CssVarsProvider } from '@mui/joy/styles';
+import App from './app';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.querySelector("#root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <StyledEngineProvider injectFirst>
+      <CssVarsProvider>
+        <App />
+      </CssVarsProvider>
+    </StyledEngineProvider>
+  </React.StrictMode>
+);
