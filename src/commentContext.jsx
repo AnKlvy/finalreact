@@ -11,6 +11,7 @@ const { comments, currentUser } = data;
 
 export const CommentProvider = ({children}) =>{
     const [commentSection, setCommentSection] = useState(comments);
+    
     const addComment = (data) => {
       setCommentSection([
         ...commentSection,

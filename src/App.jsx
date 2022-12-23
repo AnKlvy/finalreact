@@ -23,7 +23,7 @@ function App() {
           return <Comment key={comment.id} data={comment} />;
         })}
       
-    <TextareaValidator/>
+    <TextareaValidator style={{ fontFamily:'https://fonts.google.com/specimen/Rubik'}}/>
     
     <div style={{height:'200px'}}></div>
     </div>
