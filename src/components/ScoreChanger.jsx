@@ -13,7 +13,7 @@ const ScoreChanger = ({ onScore }) => {
   const { comments } = useContext(CommentContext);
   return (
     <div>
-      <IconButton
+      <IconButton sx={{}}
         // disableRipple
         aria-label="increase score"
         onClick={() => {
@@ -22,7 +22,7 @@ const ScoreChanger = ({ onScore }) => {
       >
         <AddIcon sx={{ height: "20px", width: " 20px", color: "" }} />
       </IconButton>
-      <Typography style={{ color: "hsl(238, 40%, 52%)", fontWeight: 500, width:'5px' }}>
+      <Typography style={{ color: "hsl(238, 40%, 52%)", fontWeight: 500,textAlign: "center"}}>
         {score}
       </Typography>
       <IconButton
