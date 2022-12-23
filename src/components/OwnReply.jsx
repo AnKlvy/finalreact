@@ -56,12 +56,12 @@ const OwnReply = ({ onContent, onCount, onTar, onDel, comId }) => {
                   <Avatar src={prsAva}></Avatar>
                   <Typography
                     fontWeight="bold"
-                    sx={{ color: "neutral.darkBlue" }}
+                    sx={{ color: "" }}
                   >
                     juliusomo
                   </Typography>
                   <YouTag />
-                  <Typography sx={{ color: "neutral.grayishBlue" }}>
+                  <Typography sx={{ color: "" }}>
                     Just now
                   </Typography>
                 </Stack>
@@ -69,7 +69,7 @@ const OwnReply = ({ onContent, onCount, onTar, onDel, comId }) => {
                   <Button
                     startIcon={<Delete />}
                     sx={{
-                      color: "custom.softRed",
+                      color: "",
                       fontWeight: 500,
                       textTransform: "capitalize",
                     }}
@@ -85,7 +85,7 @@ const OwnReply = ({ onContent, onCount, onTar, onDel, comId }) => {
                     sx={{
                       fontWeight: 500,
                       textTransform: "capitalize",
-                      color: "custom.moderateBlue",
+                      color: "",
                     }}
                     startIcon={<Edit />}
                     onClick={() => {
@@ -113,12 +113,12 @@ const OwnReply = ({ onContent, onCount, onTar, onDel, comId }) => {
                   />
                   <Button
                     sx={{
-                      bgcolor: "custom.moderateBlue",
-                      color: "neutral.white",
+                      bgcolor: "blue",
+                      color: "white",
                       p: "8px 25px",
                       float: "right",
                       "&:hover": {
-                        bgcolor: "custom.lightGrayishBlue",
+                        bgcolor: "blue",
                       },
                     }}
                     onClick={() => {
@@ -139,7 +139,7 @@ const OwnReply = ({ onContent, onCount, onTar, onDel, comId }) => {
                 >
                   <Typography
                     sx={{
-                      color: "custom.moderateBlue",
+                      color: "",
                       width: "fit-content",
                       display: "inline-block",
                       fontWeight: 500,

@@ -12,15 +12,15 @@ import {CommentContext} from "../commentContext";
 
 
 const AddReply = ({ onAdd }) => {
-  const { IMGOBJ } = useContext(CommentContext);
+  const { IMG } = useContext(CommentContext);
   const [replyText, setReplyText] = useState("");
   return (
-    <ThemeProvider theme={theme}>
+    
       <Card>
         <Box sx={{ p: "15px" }}>
           <Stack direction="row" spacing={2} alignItems="flex-start">
             <Avatar
-              src={IMGOBJ.juliusomo}
+              src={IMG.juliusomo}
               variant="rounded"
               alt="user-avatar"
             />
@@ -38,11 +38,11 @@ const AddReply = ({ onAdd }) => {
             <Button
               size="large"
               sx={{
-                bgcolor: "/* custom.moderateBlue */",
+                bgcolor: "blue",
                 color: "white",
                 p: "8px 25px",
                 "&:hover": {
-                  bgcolor: "/* custom.lightGrayishBlue */",
+                  bgcolor: "blue",
                 },
               }}
               onClick={(e) => {
@@ -55,7 +55,7 @@ const AddReply = ({ onAdd }) => {
           </Stack>
         </Box>
       </Card>
-    </ThemeProvider>
+    
   );
 };
 

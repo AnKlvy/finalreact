@@ -54,46 +54,16 @@ export const Comment=({data}) =>{
           </Grid> */}
           <Grid item xs>
 
-            {/* <Typography variant="h6" style={{display:'inline', margin: 0, textAlign: "left" }}>{userName} </Typography> 
-            {userName === "juliusomo" &&  <YouTag />}
-            <Typography style={{display:'inline', textAlign: "left", color: "hsl(211, 10%, 45%)" }}>{createdAt}</Typography>
-            {userName === "juliusomo" ? (
-                  // <Stack direction="row" spacing={1}>
-                  <div style={{display:'inline', justifyContent:'right'}}>
-                    
-                    <button
-                      
-                      style={{
-                        display:'inline',
-                        border:'0px',
-                        backgroundColor:'white',
-                        color: "hsl(358, 79%, 66%)",
-                        fontWeight: 500,
-                        textTransform: "capitalize",
-                        fontFamily:'https://fonts.google.com/specimen/Rubik'
-                      }}
-                      onClick={() => {
-                        handleOpen();
-                      }}
-                    >
-                      <Delete/>DELETE
-                      
-                    </button>
-                    <button
-                      // variant="text"
-                      disabled={editingComm}
-                      style={{
-                      */}
                 <Stack spacing={2} direction="row" alignItems="center">
                   <Avatar src={ava}></Avatar>
                   <Typography
                     fontWeight="bold"
-                    sx={{ color: "neutral.darkBlue" }}
+                    sx={{ color: "" }}
                   >
                     {userName}
                   </Typography>
                 {userName === "juliusomo" && <YouTag />}
-                  <Typography sx={{ color: "neutral.grayishBlue" }}>
+                  <Typography sx={{ color: "" }}>
                     {createdAt}
                   </Typography>
                 </Stack>
@@ -102,7 +72,7 @@ export const Comment=({data}) =>{
                     <Button
                       startIcon={<Delete />}
                       sx={{
-                        color: "custom.softRed",
+                        color: "",
                         fontWeight: 500,
                         textTransform: "capitalize",
                       }}
@@ -118,7 +88,7 @@ export const Comment=({data}) =>{
                       sx={{
                         fontWeight: 500,
                         textTransform: "capitalize",
-                        color: "custom.moderateBlue",
+                        color: "",
                       }}
                       startIcon={<Edit />}
                       onClick={() => setEditingComm(!editingComm)}
@@ -135,7 +105,7 @@ export const Comment=({data}) =>{
                     sx={{
                       fontWeight: 500,
                       textTransform: "capitalize",
-                      color: "custom.moderateBlue",
+                      color: "",
                     }}
                     startIcon={<img src={replyArrow} alt="reply sign" />}
                   >
@@ -146,11 +116,12 @@ export const Comment=({data}) =>{
             <Typography style={{ textAlign: "left" }}>
               {content}
             </Typography> 
+            <div style={{height:'40px'}}></div>
           </Grid>
           
         </Grid>
-        <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
-      
+        
+        <div style={{height:'20px'}}></div>
       {/* </Paper> */}
     </div>
     {replies && (

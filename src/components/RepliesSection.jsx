@@ -61,11 +61,11 @@ const RepliesSection = ({ onReplies, onClicked, onTar }) => {
                       <Avatar src={ava}></Avatar>
                       <Typography
                         fontWeight="bold"
-                        sx={{ color: "neutral.darkBlue" }}
+                        sx={{ color: "" }}
                       >
                         {userName}
                       </Typography>
-                      <Typography sx={{ color: "neutral.grayishBlue" }}>
+                      <Typography sx={{ color: "" }}>
                         {createdAt}
                       </Typography>
                     </Stack>
@@ -74,7 +74,7 @@ const RepliesSection = ({ onReplies, onClicked, onTar }) => {
                       sx={{
                         fontWeight: 500,
                         textTransform: "capitalize",
-                        color: "custom.moderateBlue",
+                        color: "",
                       }}
                       startIcon={<img src={replyArrow} alt="reply sign" />}
                     >
@@ -83,11 +83,11 @@ const RepliesSection = ({ onReplies, onClicked, onTar }) => {
                   </Stack>
                   <Typography
                     component="div"
-                    sx={{ color: "neutral.grayishBlue", p: "20px 0" }}
+                    sx={{ color: ".", p: "20px 0" }}
                   >
                     <Typography
                       sx={{
-                        color: "custom.moderateBlue",
+                        color: "",
                         width: "fit-content",
                         display: "inline-block",
                         fontWeight: 500,
