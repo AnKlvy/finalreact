@@ -9,6 +9,8 @@ import {YouTag} from "./YouTag";
 import { CommentContext } from "../commentContext";
 import {ConfirmDelete} from "./ConfirmDelete";
 import { ModalDelete } from "./ModalDelete";
+import RepliesSection from "./RepliesSection";
+import replyArrow from "../images/icon-reply.svg";
 
 
 
@@ -36,6 +38,7 @@ export const Comment=({data}) =>{
     <Container sx={{width:'60%'}}>
     <div style={{
     justifyContent:'center' }}>
+      <div style={{height:'60px'}}></div>
       {/* <Paper sx={{ padding: "40px 20px" }}> */}
       {/* <ErrorBoundary> */}
       <ConfirmDelete onOpen={openModal} onClose={handleClose} id={id} />
@@ -44,14 +47,14 @@ export const Comment=({data}) =>{
           <Grid item xs={'auto'} sx={{width:'30px'}}>
             <ScoreChanger onScore={score} />
           </Grid>
-          <Grid  item xs={1}>
+          {/* <Grid  item xs={1}>
             <Avatar alt="juliusomo" src={ava} />
            
                   
-          </Grid>
+          </Grid> */}
           <Grid item xs>
 
-            <Typography variant="h6" style={{display:'inline', margin: 0, textAlign: "left" }}>{userName} </Typography> 
+            {/* <Typography variant="h6" style={{display:'inline', margin: 0, textAlign: "left" }}>{userName} </Typography> 
             {userName === "juliusomo" &&  <YouTag />}
             <Typography style={{display:'inline', textAlign: "left", color: "hsl(211, 10%, 45%)" }}>{createdAt}</Typography>
             {userName === "juliusomo" ? (
@@ -80,22 +83,65 @@ export const Comment=({data}) =>{
                       // variant="text"
                       disabled={editingComm}
                       style={{
-                      /*   ml:'auto', */ display:'inline',
-                        border:'0px',
-                        backgroundColor:'white',
+                      */}
+                <Stack spacing={2} direction="row" alignItems="center">
+                  <Avatar src={ava}></Avatar>
+                  <Typography
+                    fontWeight="bold"
+                    sx={{ color: "neutral.darkBlue" }}
+                  >
+                    {userName}
+                  </Typography>
+                {userName === "juliusomo" && <YouTag />}
+                  <Typography sx={{ color: "neutral.grayishBlue" }}>
+                    {createdAt}
+                  </Typography>
+                </Stack>
+                {userName === "juliusomo" ? (
+                  <Stack direction="row" spacing={1}>
+                    <Button
+                      startIcon={<Delete />}
+                      sx={{
+                        color: "custom.softRed",
                         fontWeight: 500,
                         textTransform: "capitalize",
-                        color: "hsl(238, 40%, 52%)",
-                        fontFamily:'https://fonts.google.com/specimen/Rubik'
                       }}
-                    
+                      onClick={() => {
+                        handleOpen();
+                      }}
+                    >
+                      Delete
+                    </Button>
+                    <Button
+                      variant="text"
+                      disabled={editingComm}
+                      sx={{
+                        fontWeight: 500,
+                        textTransform: "capitalize",
+                        color: "custom.moderateBlue",
+                      }}
+                      startIcon={<Edit />}
                       onClick={() => setEditingComm(!editingComm)}
                     >
-                       < Edit />EDIT
-                    </button>
-                  </div>
-                 
-                ):<div></div>}
+                      Edit
+                    </Button>
+                  </Stack>
+                ) : (
+                  <Button
+                    onClick={() => {
+                      setClicked(!clicked);
+                    }}
+                    variant="text"
+                    sx={{
+                      fontWeight: 500,
+                      textTransform: "capitalize",
+                      color: "custom.moderateBlue",
+                    }}
+                    startIcon={<img src={replyArrow} alt="reply sign" />}
+                  >
+                    Reply
+                  </Button>
+                )}
           
             <Typography style={{ textAlign: "left" }}>
               {content}
@@ -107,6 +153,13 @@ export const Comment=({data}) =>{
       
       {/* </Paper> */}
     </div>
+    {replies && (
+        <RepliesSection
+          onReplies={replies}
+          onClicked={clicked}
+          onTar={userName}
+        />
+      )}
     </Container>
   );
 }
