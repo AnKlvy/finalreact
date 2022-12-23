@@ -6,13 +6,13 @@ import { CommentProvider } from './commentContext';
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
   <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <CssVarsProvider>
-      <CommentProvider>
+    {/* <StyledEngineProvider injectFirst> */}
+      {/* <CssVarsProvider>*/}
+    <CommentProvider> 
         <App />
         </CommentProvider>
-      </CssVarsProvider>
+      {/* </CssVarsProvider>
       
-    </StyledEngineProvider>
+    </StyledEngineProvider> */}
   </React.StrictMode>
 );

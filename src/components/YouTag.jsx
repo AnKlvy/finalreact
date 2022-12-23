@@ -1,8 +1,8 @@
-import { Chip } from "@mui/joy";
-import {  } from "@mui/material";
+import {  } from "@mui/joy";
+import { Chip } from "@mui/material";
 import React from "react";
 
-const YouTag = () => {
+export const YouTag = () => {
   return (
     
       <Chip
@@ -13,10 +13,10 @@ const YouTag = () => {
           backgroundColor: "hsl(238, 40%, 52%)",
           color: "#FFF",
           fontWeight: 500,
-          borderRadius: "5px",
+          // borderRadius: "5px",
         }}
       />
   );
 };
 
-export default YouTag;
+

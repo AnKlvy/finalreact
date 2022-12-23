@@ -3,7 +3,7 @@ import {CommentContext} from './../commentContext'
 
 import Grid from '@mui/material/Unstable_Grid2';
 
-import { Box, Button, Avatar, Textarea} from '@mui/joy';
+import { Box, Button, Avatar, Textarea, StyledEngineProvider, CssVarsProvider} from '@mui/joy';
 
 
 export default function TextareaValidator() {
@@ -12,8 +12,10 @@ export default function TextareaValidator() {
   const {IMG, addComment} = useContext(CommentContext);
   return (
     <div style={{display:'flex', 
-    justifyContent:'center'}}>
-      
+    justifyContent:'center',
+    fontFamily:'https://fonts.google.com/specimen/Rubik'}}>
+ {/* <StyledEngineProvider injectFirst> 
+     <CssVarsProvider>  */}
       <Grid container spacing={5} 
       sx = {{
         backgroundColor:'white', 
@@ -72,6 +74,8 @@ export default function TextareaValidator() {
     
       </Grid>
       </Grid>
+      {/* </CssVarsProvider>
+      </StyledEngineProvider> */}
     </div>
     
     

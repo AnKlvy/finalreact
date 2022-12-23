@@ -7,9 +7,9 @@ import {
   DialogTitle,
   DialogContent,
 } from "@mui/material";
-import CommentContext from "../commentContext";
+import {CommentContext} from "../commentContext";
 
-const ConfirmDelete = ({ onOpen, onClose, id, onDel, comId }) => {
+export const ConfirmDelete = ({ onOpen, onClose, id, onDel, comId }) => {
   const { deleteComment } = useContext(CommentContext);
   return (
     <Dialog open={onOpen} onClose={onClose}>
@@ -55,4 +55,4 @@ const ConfirmDelete = ({ onOpen, onClose, id, onDel, comId }) => {
   );
 };
 
-export default ConfirmDelete;
+
